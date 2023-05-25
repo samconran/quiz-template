@@ -10,10 +10,10 @@ An example quiz.json file has been provided. This is my quiz from week 4 and has
 
 ### Top Level Properties
 
-| Property | Type         | Description                                                                                    |
-| -------- | ------------ | ---------------------------------------------------------------------------------------------- |
-| `title`  | String       | The title for your quiz, to be displayed on the first slide                                    |
-| `rounds` | Array<Round> | An array of round objects, documented below. These are fed into each round (question + answer) |
+| Property | Type           | Description                                                                                    |
+| -------- | -------------- | ---------------------------------------------------------------------------------------------- |
+| `title`  | String         | The title for your quiz, to be displayed on the first slide                                    |
+| `rounds` | Array\<Round\> | An array of round objects, documented below. These are fed into each round (question + answer) |
 
 ### Round Objects
 
