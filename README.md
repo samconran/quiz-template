@@ -6,6 +6,8 @@ The presentation itself is rendered using svelte and uses reveal.js to power the
 
 ## Quiz JSON format
 
+An example quiz.json file has been provided. This is my quiz from week 4 and has been ported over to this template to illustrate how the JSON file should be structured. For more details on all the available/valid JSON properties, please see the following documentation.
+
 ### Top Level Properties
 
 | Property | Type         | Description                                                                                    |
