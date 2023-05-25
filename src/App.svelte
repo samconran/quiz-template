@@ -10,6 +10,8 @@
     import quiz from "./assets/quiz.json";
     import ResultSlide from "./components/ResultSlide.svelte";
     import FinalResults from "./components/FinalResults.svelte";
+    import UsersModal from "./components/UsersModal.svelte";
+    import SettingsIcon from "./components/SettingsIcon.svelte";
 
     export let app;
     export let reveal;
@@ -19,6 +21,8 @@
         const deck = Reveal(reveal);
         deck.initialize();
     });
+
+    let isUserModalOpen = false;
 </script>
 
 <svelte:head>
@@ -28,13 +32,29 @@
 <div class="reveal">
     <div class="slides">
         <Title title={quiz.title} />
-        {#each quiz.questions as question, i}
+        {#each quiz.rounds as round, i}
             <Slide>
-                <QuestionSlide content={question.question} index={i} />
-                <AnswerSlide content={question.answer} />
-                <ResultSlide points={question.points} />
+                <QuestionSlide content={round.question} index={i} />
+                <AnswerSlide content={round.answer} />
+                <ResultSlide points={round.points} />
             </Slide>
         {/each}
         <FinalResults />
     </div>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span on:click={_ => (isUserModalOpen = true)}>
+        <SettingsIcon width={20} height={20} color="#e7ad52" />
+    </span>
+
+    <UsersModal isOpen={isUserModalOpen} on:closeModal={_ => (isUserModalOpen = false)} />
 </div>
+
+<style>
+    span {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        z-index: 1;
+        cursor: pointer;
+    }
+</style>

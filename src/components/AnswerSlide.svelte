@@ -8,8 +8,8 @@
     {#if content.type === "inline-image"}
         <img class={content.answer && "small"} src={content.image} alt="The object in question" />
     {/if}
-    {#if content.answer}
-        <h2>{content.answer}</h2>
+    {#if content.text}
+        <h2>{content.text}</h2>
     {/if}
     {#if content.detail}
         <p>{content.detail}</p>

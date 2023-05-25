@@ -4,7 +4,7 @@ import "reveal.js/dist/theme/night.css";
 export default {
     // App Config
     app: {
-        name: "Reveal.js with Svelte and Vite"
+        name: "IE Weekly Quiz"
     },
     // Reveal Config
     reveal: {

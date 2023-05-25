@@ -1,47 +1,47 @@
 {
     "title": "Example Quiz",
-    "questions": [
+    "rounds": [
         {
             "question": {
                 "type": "normal",
-                "question": "What is the only country to have a non-rectangular flag?"
+                "text": "What is the only country to have a non-rectangular flag?"
             },
             "answer": {
                 "type": "inline-image",
                 "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Nepal.png",
-                "answer": "Nepal"
+                "text": "Nepal"
             },
             "points": 1
         },
         {
             "question": {
                 "type": "inline-image",
-                "question": "In which film would you find this origami model of a unicorn?",
+                "text": "In which film would you find this origami model of a unicorn?",
                 "image": "https://assets3.thrillist.com/v1/image/2707768/1000x666/flatten;crop;webp=auto;jpeg_quality=60.jpg"
             },
             "answer": {
                 "type": "bg-image",
                 "image": "https://media.tenor.com/tAEjOWcpT8UAAAAC/cry-blade-runner.gif",
-                "answer": "Blade Runner"
+                "text": "Blade Runner"
             },
             "points": 1
         },
         {
             "question": {
                 "type": "normal",
-                "question": "What empire did Rome fight during the Punic Wars?"
+                "text": "What empire did Rome fight during the Punic Wars?"
             },
             "answer": {
                 "type": "bg-image",
                 "image": "/images/carthage.jpeg",
-                "answer": "Carthage"
+                "text": "Carthage"
             },
             "points": 1
         },
         {
             "question": {
                 "type": "bg-image",
-                "question": "Kratos is the main character of what video game series?"
+                "text": "Kratos is the main character of what video game series?"
             },
             "answer": {
                 "type": "inline-image",
@@ -52,12 +52,12 @@
         {
             "question": {
                 "type": "normal",
-                "question": "Who was the first president of the United States?"
+                "text": "Who was the first president of the United States?"
             },
             "answer": {
                 "type": "inline-image",
                 "image": "https://hips.hearstapps.com/hmg-prod/images/gilbert_stuart_williamstown_portrait_of_george_washington_promo.jpg",
-                "answer": "George Washington",
+                "text": "George Washington",
                 "detail": "April 1789 — March 1797"
             },
             "points": 1
