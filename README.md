@@ -1,47 +1,53 @@
-# Svelte + Vite
+# IE Weekly Quiz Template
 
-This template should help get you started developing with Svelte in Vite.
+This template allows for the IE weekly quiz to be quickly written by simply editing the [quiz.json](./src/assets/quiz.json) file in `src/assets`.
 
-## Recommended IDE Setup
+The presentation itself is rendered using svelte and uses reveal.js to power the slides. This sits inside a vite environment. Vitest is used for unit testing.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Quiz JSON format
 
-## Need an official Svelte framework?
+### Top Level Properties
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+| Property | Type         | Description                                                                                    |
+| -------- | ------------ | ---------------------------------------------------------------------------------------------- |
+| `title`  | String       | The title for your quiz, to be displayed on the first slide                                    |
+| `rounds` | Array<Round> | An array of round objects, documented below. These are fed into each round (question + answer) |
 
-## Technical considerations
+### Round Objects
 
-**Why use this over SvelteKit?**
+| Property   | Type     | Description                                                                                |
+| ---------- | -------- | ------------------------------------------------------------------------------------------ |
+| `question` | Question | A Question Object, documented below. This contains the information for each question slide |
+| `answer`   | Answer   | An Answer Object, documented below. This contains the information for each answer slide    |
+| `points`   | Number   | A number indicating how many points are available by answering this question correctly     |
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+### Question Objects
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+| Property | Type   | Description                                                                                                                                |
+| -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `text`   | String | The text of the question                                                                                                                   |
+| `type`   | String | One of "normal", "inline-image" or "bg-image". If inline image or BG image types are selected, an `image` property _must_ also be provided |
+| `image`  | String | (Optional) A valid URL to an image/gif                                                                                                     |
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+### Answer Objects
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+| Property | Type   | Description                                                                                                                                |
+| -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `text`   | String | The text of the answer                                                                                                                     |
+| `type`   | String | One of "normal", "inline-image" or "bg-image". If inline image or BG image types are selected, an `image` property _must_ also be provided |
+| `image`  | String | (Optional) A valid URL to an image/gif                                                                                                     |
+| `detail` | String | (Optional) A string containing any extra context/detail you want to provide to the answer                                                  |
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+## How to Run a Quiz
 
-**Why include `.vscode/extensions.json`?**
+If you are not familiar with Vite, running this solution is fairly simple.
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Ensure you have installed the required modules by running `npm i` first.
 
-**Why enable `checkJs` in the JS template?**
+To serve the quiz, you can either run this using using vite's local HMR-powered development server by running `npm run dev`, or you can build the solution using `npm run build` and then serve the build with `npm run preview`;
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+## Testing
 
-**Why is HMR not preserving my local component state?**
+Also provided are some vitest-powered unit tests which will validate your `quiz.json` to make sure it is a valid quiz. You can run these tests by running `npm run test`.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+The source code for these unit tests can be viewed [here](./tests/quiz-structure.js).
