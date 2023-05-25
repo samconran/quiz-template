@@ -35,7 +35,7 @@ An example quiz.json file has been provided. This is my quiz from week 4 and has
 
 | Property | Type   | Description                                                                                                                                |
 | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `text`   | String | The text of the answer                                                                                                                     |
+| `text`   | String | (Optional) The text of the answer. If no text is provided, then an `image` field _must_ be provided.                                       |
 | `type`   | String | One of "normal", "inline-image" or "bg-image". If inline image or BG image types are selected, an `image` property _must_ also be provided |
 | `image`  | String | (Optional) A valid URL to an image/gif                                                                                                     |
 | `detail` | String | (Optional) A string containing any extra context/detail you want to provide to the answer                                                  |
