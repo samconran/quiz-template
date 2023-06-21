@@ -6,7 +6,9 @@
 
     let users;
     scores.subscribe(scores => {
-        users = Object.keys(scores).filter(u => scores[u].active);
+        users = Object.keys(scores)
+            .filter(u => scores[u].active)
+            .sort();
     });
 
     const modifyUserScore = (user, checkbox) => {
@@ -29,7 +31,7 @@
             {#each users as user}
                 <tr>
                     <td>{user}</td>
-                    <td><input type="checkbox" on:change={e => modifyUserScore(user, e.target)} /></td>
+                    <td class="cb_cell"><input type="checkbox" on:change={e => modifyUserScore(user, e.target)} /></td>
                 </tr>
             {/each}
         </tbody>
@@ -39,5 +41,8 @@
 <style>
     table {
         font-size: 1.5rem;
+    }
+    td.cb_cell {
+        text-align: center;
     }
 </style>

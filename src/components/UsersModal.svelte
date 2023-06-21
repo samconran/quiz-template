@@ -31,7 +31,7 @@
                 {#each users as user}
                     <tr>
                         <td>{user.name}</td>
-                        <td><input type="checkbox" checked={user.active} on:change={e => toggleActive(user.name, e.target)} /></td>
+                        <td class="cb_cell"><input type="checkbox" checked={user.active} on:change={e => toggleActive(user.name, e.target)} /></td>
                     </tr>
                 {/each}
             </tbody>
@@ -61,7 +61,7 @@
     /* Modal Content/Box */
     .modal-content {
         background-color: #111;
-        margin: 15% auto;
+        margin: 10% auto;
         padding: 2rem 5rem;
         border: 1px solid #888;
         width: fit-content;
@@ -86,5 +86,13 @@
     button:active {
         background-color: #df9319;
         cursor: pointer;
+    }
+
+    td.cb_cell {
+        text-align: center;
+    }
+
+    td.cb_cell > input {
+        vertical-align: middle;
     }
 </style>

@@ -6,7 +6,7 @@
 
 <Slide bg={content.type === "bg-image" && content.image}>
     {#if content.type === "inline-image"}
-        <img class={content.answer && "small"} src={content.image} alt="The object in question" />
+        <img class={content.answer ?? "small"} src={content.image} alt="The object in question" />
     {/if}
     {#if content.text}
         <h2>{content.text}</h2>

@@ -27,16 +27,16 @@ An example quiz.json file has been provided. This is my quiz from week 4 and has
 
 | Property | Type   | Description                                                                                                                                |
 | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `text`   | String | The text of the question                                                                                                                   |
 | `type`   | String | One of "normal", "inline-image" or "bg-image". If inline image or BG image types are selected, an `image` property _must_ also be provided |
+| `text`   | String | The text of the question                                                                                                                   |
 | `image`  | String | (Optional) A valid URL to an image/gif                                                                                                     |
 
 ### Answer Objects
 
 | Property | Type   | Description                                                                                                                                |
 | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `text`   | String | (Optional) The text of the answer. If no text is provided, then an `image` field _must_ be provided.                                       |
 | `type`   | String | One of "normal", "inline-image" or "bg-image". If inline image or BG image types are selected, an `image` property _must_ also be provided |
+| `text`   | String | (Optional) The text of the answer. If no text is provided, then an `image` field _must_ be provided.                                       |
 | `image`  | String | (Optional) A valid URL to an image/gif                                                                                                     |
 | `detail` | String | (Optional) A string containing any extra context/detail you want to provide to the answer                                                  |
 
@@ -46,7 +46,10 @@ If you are not familiar with Vite, running this solution is fairly simple.
 
 Ensure you have installed the required modules by running `npm i` first.
 
-To serve the quiz, you can either run this using using vite's local HMR-powered development server by running `npm run dev`, or you can build the solution using `npm run build` and then serve the build with `npm run preview`;
+To serve the quiz, you can either:
+
+-   Run this using using vite's local HMR-powered development server by running `npm run dev`
+-   build the solution using `npm run build` and then serve the build with `npm run preview`.
 
 ## Testing
 
