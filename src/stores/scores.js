@@ -1,6 +1,6 @@
 import { writable, get } from "svelte/store";
 
-const ieList = ["Stuart", "Mark", "Martha", "Sam", "Venera", "Rui", "Robin", "Sebastian", "Thomas", "Lewis", "Olivier"];
+const ieList = ["Stuart", "Mark", "Martha", "Sam", "Venera", "Rui", "Robin", "Sebastian", "Thomas", "Lewis", "Olivier", "Marcin"];
 
 function createScores() {
     const initialState = {};
